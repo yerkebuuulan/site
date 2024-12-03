@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>{% block title %}Chef - Cook: Recipes and Inventory{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Chef - Cook: Recipes and Inventory Management</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Рецепты</a></li>
+                <li><a href="{% url 'sclad' %}">Склад</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                <li><a href="{% url 'book_list' %}">Книги</a></li>
+        {% if user.is_authenticated %}
+            <p>Привет, {{ user.username }}!</p>  <!-- Отображение имени пользователя -->
+            <a href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+            <a href="{% url 'register' %}">Регистрация</a>
+            <a href="{% url 'login' %}">Вход</a>
+        {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Chef - Cook. Все права защищены.</p>
+    </footer>
+</body>
+</html>

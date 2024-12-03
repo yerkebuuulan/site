@@ -1,0 +1,26 @@
+<!-- templates/registration/login.html -->
+{% extends 'recipes/base.html' %}
+
+{% block title %}Вход в систему{% endblock %}
+
+{% block content %}
+<h2>Вход в систему</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="username">Имя пользователя:</label>
+        <input type="text" name="username" id="username" required>
+    </div>
+    <div>
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" id="password" required>
+    </div>
+    <button type="submit">Войти</button>
+</form>
+
+{% if next %}
+    <p>Вы будете перенаправлены на <a href="{{ next }}">{{ next }}</a> после входа.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'recipes/base.html' %}
+
+{% block title %}Склад{% endblock %}
+
+{% block content %}
+<h2>Склад: Остатки продуктов</h2>
+<div class="product-container">
+    {% for product in products %}
+    <div class="container" onclick="showAlert()">
+        <h3>{{ product.category }}</h3>
+        <ul>
+            <li>{{ product.name }} — {{ product.quantity }}</li>
+        </ul>
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+    </div>
+    {% endfor %}
+</div>
+<script>
+    function showAlert() {
+        alert("Вы нажали на контейнер!");
+    }
+</script>
+{% endblock %}

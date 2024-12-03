@@ -1,0 +1,25 @@
+{% extends 'recipes/base.html' %}
+
+{% block title %}Список книг{% endblock %}
+
+{% block content %}
+<h2>Список книг</h2>
+
+<!-- Button to create a new book -->
+<a href="{% url 'create_book' %}">
+    <button type="button">Добавить книгу</button>
+</a>
+
+{% if books %}
+    {% for book in books %}
+        <div class="container">
+            <h3>{{ book.title }} - {{ book.author }}</h3>
+            <a href="{% url 'edit_book' book.pk %}">Редактировать</a> |
+            <a href="{% url 'delete_book' book.pk %}">Удалить</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Нет книг для отображения.</p>
+{% endif %}
+
+{% endblock %}

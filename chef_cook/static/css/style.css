@@ -1,0 +1,154 @@
+   body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    header {
+    background-color: #ff7043;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    }
+    
+    nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    }
+    
+    nav ul li {
+    display: inline;
+    margin-right: 20px;
+    }
+    
+    nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    }
+    
+    main {
+    padding: 20px;
+    }
+    
+    h2 {
+    color: #ff7043;
+    text-align: center;
+    }
+    
+    ol, ul {
+    margin-bottom: 20px;
+    }
+    
+    img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    }
+    
+    section {
+    background-color: #fff3e0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    }
+    
+    form {
+    display: flex;
+    flex-direction: column;
+    }
+    
+    form label {
+    margin-bottom: 5px;
+    }
+    
+    form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+    
+    form button {
+    padding: 10px;
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+    
+    footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    }
+
+    
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    
+    .container {
+        background-color: #fff3e0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        flex: 1 1 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход */
+    }
+
+    /* Эффект при наведении */
+    .container:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 4px 15px rgba(255, 112, 67, 0.5); 
+    }
+    
+    h3 {
+        color: #ff7043;
+        text-align: center;
+    }
+    
+    ul {
+        margin-bottom: 20px;
+    }
+    
+    img {
+        max-width: 100%; /* Ограничение ширины изображения */
+        height: auto;    /* Автоматическая высота для сохранения пропорций */
+        margin-top: 10px; /* Отступ сверху для изображения */
+        border-radius: 10px;
+    }
+    
+    /* Медиа-запрос для 1280x720 */
+    @media (max-width: 1280px) {
+        .container {
+            flex: 1 1 calc(33.33% - 20px); 
+            max-width: calc(33.33% - 20px);
+        }
+    }
+    
+    /* Медиа-запрос для 800x640 */
+    @media (max-width: 800px) {
+        .container {
+            flex: 1 1 calc(80% - 20px); 
+            max-width: calc(50% - 20px);
+        }
+    }
+    
+    
+    

@@ -1,0 +1,37 @@
+{% extends 'recipes/base.html' %}
+
+{% block title %}Рецепты{% endblock %}
+
+{% block content %}
+<h2>Рецепты</h2>
+{% if recipes %}
+    {% for recipe in recipes %}
+        <div class="container" onclick="showAlert()">
+            <h3>{{ recipe.title }}</h3>
+            {% if recipe.image %}
+                <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+            {% endif %}
+            <h5>Шаги приготовления:</h5>
+            <ul>
+                {% for step in recipe.steps.splitlines %}
+                    {% if step %}
+                        <li>{{ step }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <h5>Необходимые продукты:</h5>
+            <ul>
+                {% for product in recipe.products.all %}
+                    <li>{{ product.name }} - {{ product.quantity }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<script>
+    function showAlert() {
+        alert("Вы нажали на контейнер!");
+    }
+</script>
+{% endblock %}
